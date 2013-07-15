@@ -35,7 +35,7 @@ Todos.TodosController = Ember.ArrayController.extend({
     if (value === undefined) {
       return !!this.get('length') && this.everyProperty('isCompleted', true);
     } else {
-      this.setEach('isCompleted', true);
+      this.setEach('isCompleted', value);
       this.get('store').save();
       return value;
     }
